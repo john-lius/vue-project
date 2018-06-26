@@ -4,8 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 
-Vue.use(Router);
-Vue.use(iView);
+Vue.use(Router)
+Vue.use(iView)
 
 export default new Router({
   routes: [

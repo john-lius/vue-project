@@ -1,114 +1,129 @@
+<style scoped>
+  .layout{
+    border: 1px solid #d7dde4;
+    background: #f5f7f9;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .layout-header-bar{
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  }
+  .layout-logo-left{
+    width: 90%;
+    height: 30px;
+    background: #5b6270;
+    border-radius: 3px;
+    margin: 15px auto;
+  }
+  .menu-icon{
+    transition: all .3s;
+  }
+  .rotate-icon{
+    transform: rotate(-90deg);
+  }
+  .frame-logo {
+    font-size: 34px;
+    font-family: "Microsoft YaHei UI";
+    color: white;
+  }
+  .role {
+    font-size: 14px;
+    color: white;
+    font-family: "Microsoft YaHei UI";
+  }
+  .line {
+    border-top: 1px solid rgb(85, 95, 105);
+  }
+  .menu-item span{
+    display: inline-block;
+    overflow: hidden;
+    width: 69px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+    transition: width .2s ease .2s;
+  }
+  .menu-item i{
+    transform: translateX(0px);
+    transition: font-size .2s ease, transform .2s ease;
+    vertical-align: middle;
+    font-size: 16px;
+  }
+  .collapsed-menu span{
+    width: 0px;
+    transition: width .2s ease;
+  }
+  .collapsed-menu i{
+    transform: translateX(5px);
+    transition: font-size .2s ease .2s, transform .2s ease .2s;
+    vertical-align: middle;
+    font-size: 22px;
+  }
+</style>
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
-    <Button type="success">Success</Button>
+  <div class="layout">
+    <Layout>
+      <Sider ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed">
+        <div class="frame-logo">vue-project</div>
+        <div class="role">张三</div>
+        <div class="role">系统管理员</div>
+        <Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses" class="line">
+          <MenuItem name="1-1">
+            <Icon type="ios-navigate"></Icon>
+            <span>Option 1</span>
+          </MenuItem>
+          <MenuItem name="1-2">
+            <Icon type="search"></Icon>
+            <span>Option 2</span>
+          </MenuItem>
+          <MenuItem name="1-3">
+            <Icon type="settings"></Icon>
+            <span>Option 3</span>
+          </MenuItem>
+          <MenuItem name="1-4">
+            <Icon type="settings"></Icon>
+            <span>Option 4</span>
+          </MenuItem>
+        </Menu>
+      </Sider>
+      <Layout>
+        <Header :style="{padding: 0}" class="layout-header-bar">
+          <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '20px 20px 0'}" type="navicon-round" size="24"></Icon>
+        </Header>
+        <Content :style="{margin: '20px', background: '#fff', minHeight: '850px'}">
+          Content
+        </Content>
+      </Layout>
+    </Layout>
   </div>
 </template>
-
 <script>
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App_'
+  export default {
+    data () {
+      return {
+        isCollapsed: false
+      }
+    },
+    computed: {
+      rotateIcon () {
+        return [
+          'menu-icon',
+          this.isCollapsed ? 'rotate-icon' : ''
+        ];
+      },
+      menuitemClasses () {
+        return [
+          'menu-item',
+          this.isCollapsed ? 'collapsed-menu' : ''
+        ]
+      }
+    },
+    methods: {
+      collapsedSider () {
+        this.$refs.side1.toggleCollapse();
+      }
     }
   }
-}
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
