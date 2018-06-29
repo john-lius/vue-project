@@ -67,7 +67,7 @@
     <Layout>
       <Sider ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed">
         <div class="frame-logo">vue-project</div>
-        <div class="role">张三</div>
+        <div class="role">李四</div>
         <div class="role">系统管理员</div>
         <Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses" class="line">
           <MenuItem name="1-1">
