@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/components/home'
+import home from '@/components/index/home'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 

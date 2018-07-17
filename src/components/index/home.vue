@@ -12,42 +12,41 @@
   }
 </style>
 <template>
-  <div class="layout">
+  <div id="home" class="layout">
     <Sider :style="{position: 'fixed', height: '100vh', left: 0, overflow: 'auto'}">
       <Menu active-name="1-2" theme="dark" width="auto" :open-names="['1']">
         <Submenu name="1">
           <template slot="title">
             <Icon type="ios-navigate"></Icon>
-            Item 1
+            首页
           </template>
-          <MenuItem name="1-1">Option 1</MenuItem>
-          <MenuItem name="1-2">Option 2</MenuItem>
-          <MenuItem name="1-3">Option 3</MenuItem>
         </Submenu>
         <Submenu name="2">
           <template slot="title">
             <Icon type="ios-keypad"></Icon>
-            Item 2
+            统计查询
           </template>
-          <MenuItem name="2-1">Option 1</MenuItem>
-          <MenuItem name="2-2">Option 2</MenuItem>
+          <MenuItem name="2-1">部门工作量统计</MenuItem>
+          <MenuItem name="2-2">月度销售统计</MenuItem>
         </Submenu>
         <Submenu name="3">
           <template slot="title">
             <Icon type="ios-analytics"></Icon>
-            Item 3
+            系统管理
           </template>
-          <MenuItem name="3-1">Option 1</MenuItem>
-          <MenuItem name="3-2">Option 2</MenuItem>
+          <MenuItem name="3-1">人员管理</MenuItem>
+          <MenuItem name="3-2">角色管理</MenuItem>
         </Submenu>
       </Menu>
     </Sider>
     <Layout :style="{marginLeft: '200px'}">
-      <Header :style="{background: '#fff', boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)'}"></Header>
+      <Header :style="{background: '#fff', boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)'}">
+        <div style="text-align: right">{{att}}</div>
+      </Header>
       <Content :style="{padding: '0 16px 16px'}">
         <Breadcrumb :style="{margin: '16px 0'}"></Breadcrumb>
         <Card>
-          <div style="height: 600px">Content</div>
+          <div style="height: 800px">Content</div>
         </Card>
       </Content>
     </Layout>
@@ -55,6 +54,11 @@
 </template>
 <script>
   export default {
-
+    name: 'Home',
+    data() {
+      return {
+        att: '342432'
+      }
+    }
   }
 </script>
