@@ -1,0 +1,87 @@
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+}
+/* 充满剩余空间 */
+[flex] {
+    flex: auto;
+}
+[init] {
+    flex: initial;
+}
+/* 使用flex布局，默认上下排列，并且让容器充满全屏 */
+[layout-fill] {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+/* 使用flex布局，默认左右排列 */
+[layout] {
+    display: flex;
+    flex-direction: row;
+}
+/* 使用flex布局，默认上下排列 */
+[layout-col] {
+    display: flex;
+    flex-direction: column;
+}
+/* 换行显示 或 换列显示 */
+[layout-wrap] {
+    flex-wrap: wrap;
+}
+/* 不换行 或 不换列 显示*/
+[layout-nowrap] {
+    flex-wrap: nowrap;
+}
+/* 参数1：表示从左到右
+ * 参数2：表示从上到下
+ * start: 开始位置，center: 中间位置，end: 结束位置 */
+[layout-align='start start'] {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+[layout-align='start center'] {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+[layout-align='start end'] {
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+[layout-align='center start'] {
+    justify-content: center;
+    align-items: flex-start;
+}
+
+[layout-align='center center'] {
+    justify-content: center;
+    align-items: center;
+}
+
+[layout-align='center end'] {
+    justify-content: center;
+    align-items: flex-end;
+}
+
+[layout-align='end start'] {
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+[layout-align='end center'] {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+[layout-align='end end'] {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
