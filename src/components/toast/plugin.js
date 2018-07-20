@@ -10,6 +10,7 @@ export default {
         if (!toast) {
           toast = new VueToast()
           toast.$mount()
+
           document.querySelector(options.container || 'body').appendChild(toast.$el)
         }
         console.log('plugin done')

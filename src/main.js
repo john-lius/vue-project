@@ -17,7 +17,7 @@ Vue.prototype.$get = http.get;
 Vue.use(VueResource);
 Vue.use(toast);
 
-/* eslint-disable no-new */
+/* eslint-disable  no-new */
 // 引入路由
 
 new Vue({
