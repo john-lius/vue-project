@@ -55,7 +55,6 @@ export default {
         }
         return checkStatus(rs)
       }, function(err) {
-        console.log(err);
         console.log("服务器连接异常");
       })
     },
