@@ -23,16 +23,10 @@ export default {
   },
   methods: {
     submitForm(user) {
-      // this.$post('sys/login?username=' + user.userName + '&password=' + user.userPwd + '&logionBeid=103&module=ctrlcent').then(rs => {
-      //   if(rs.resultCode != 1) {
-      //     return;
-      //   }
-      //   this.$store.commit('loginInfo', rs)
-      //   this.$router.push('home')
-      // })
-      this.$http.post("http://192.168.5.5:8189/sys/login?username=chengw&password=1234&logionBeid=103&module=ctrlcent").then((data) => {
-          console.log(data);
-          this.$router.push('home')
+      this.$login('sys/login?username=' + user.userName + '&password=' + user.userPwd + '&logionBeid=102&module=ctrlcent').then(rs => {
+        if(rs.resultCode != 1) return;
+        // this.$store.commit('loginInfo', rs)
+        this.$router.push('home')
       })
     }
   }

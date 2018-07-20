@@ -4,12 +4,18 @@ import Vue from 'vue'
 import App from './App'
 import VueResource from 'vue-resource'
 import router from './router/index.js'
+import http from './js/http.js'
+import toast from './components/toast/plugin'
 import './iconfont/iconfont.css'
 import './styles/base.css'
 import './styles/flex.css'
 
-Vue.use(VueResource)
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+Vue.prototype.$login = http.login;
+Vue.prototype.$post = http.post;
+Vue.prototype.$get = http.get;
+Vue.use(VueResource);
+Vue.use(toast);
 
 /* eslint-disable no-new */
 // 引入路由

@@ -13,13 +13,13 @@
     </Form>
 </template>
 <script type="text/javascript">
-// import md5 from 'js-md5'
+import crypto from 'crypto';
 export default {
     data() {
         return {
             form: {
-                userName: 'mzkzr',
-                userPwd: '1234'
+                userName: '',
+                userPwd: ''
             },
             rules: {
                 userName: [
@@ -37,7 +37,9 @@ export default {
         validForm: function(name) {
             this.$refs[name].validate(valid => {
                 if (valid) {
-                    // this.form.userPwd = md5(this.form.userPwd)
+                    var md5 = crypto.createHash("md5").update(this.form.userPwd);
+                    var password = md5.digest('hex');
+                    this.form.userPwd = password;
                     this.$emit('user', this.form)
                 }
             })

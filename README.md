@@ -27,4 +27,9 @@ npm run e2e
 npm test
 ```
 
+# 登录密码加密方式md5
+npm install crypto
+
+# 基于 Promise 的 HTTP 请求客户端 axios CSDN相关文章:https://blog.csdn.net/binginsist/article/details/65630547
+npm install axios
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

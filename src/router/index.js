@@ -22,16 +22,15 @@ const routes = [
   {
     path: '/',
     name: 'login',
-    component: r => require.ensure([], () => r(require('../views/login/login.vue')), 'logIn'),
+    component: r => require.ensure([], () => r(require('../views/login/login.vue')), 'logIn')
+  },{
+    path:"/home",
+    name: 'home',
+    component: home,
     children: [{
-      path:"/home",
-      name: 'home',
-      component: home,
-      children: [{
-        path: "/about",
-        name: 'about',
-        component: about
-      }]
+      path: "/about",
+      name: 'about',
+      component: about
     }]
   }
 ]
