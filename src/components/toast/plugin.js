@@ -13,7 +13,6 @@ export default {
 
           document.querySelector(options.container || 'body').appendChild(toast.$el)
         }
-        console.log('plugin done')
         toast.show(params)
         resolve()
       })

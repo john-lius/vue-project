@@ -33,9 +33,10 @@ axios.interceptors.response.use(res => {
 export default {
     login(url, data) {
       let user = undefined,
-        roomId = undefined;
+          roomId = undefined,
+          toast = this.$toast;
       let toastMessage = function (msg, type) {
-        this.$toast({title: '系统提示', content: msg, type: type});
+        toast({title: '系统提示', content: msg, type: type});
       }
       return axios({
         method: 'post',
@@ -52,6 +53,8 @@ export default {
       }).then(function(rs) {
         if (!rs) {
           toastMessage('服务器连接异常', 'error');
+        }else if(rs.data.resultCode != '1') {
+          toastMessage(rs.data.resultMessage, 'error');
         }
         return checkStatus(rs)
       }, function(err) {

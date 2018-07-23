@@ -1,4 +1,17 @@
 # vue-project
+#### 运行和打包
+> 全局安装webpack-cli:
+npm install --save-dev webpack-cli -g
+> 全局安装
+npm install -g webpack
+> 安装到项目目录
+npm install --save-dev webpack
+> 安装webpack-cli
+npm install webpack-cli -D
+> 执行打包命令
+npm start 或 npm run server
+> 使用webpack构建本地服务器
+npm install --save-dev webpack-dev-server
 
 > A Vue.js project
 
@@ -26,6 +39,18 @@ npm run e2e
 # run all tests
 npm test
 ```
+
+> Vue框架文档
+https://cn.vuejs.org/
+
+> Vue框架快速入门
+https://blog.csdn.net/u011054333/article/details/78256169
+
+> Vue前端开发项目框架搭建(node + webpack + vue)
+https://blog.csdn.net/xiaoping_1988/article/details/78768845
+
+> 基于vue-cli快速构建步骤详解
+https://www.jianshu.com/p/2769efeaa10a
 
 # 登录密码加密方式md5
 npm install crypto

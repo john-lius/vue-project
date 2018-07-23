@@ -1,7 +1,7 @@
 <template>
   <transition name="toast-fade">
-    <div class="toast" :class="objClass" v-show="isActive" @mouseenter="onMouseenter" @mouseleave="onMouseleave">
-      <button class="toast-close-button" @click="hide">×</button>
+    <div class="toast" :class="objClass" v-show="isActive" @mouseenter="onMouseenter" @mouseleave="onMouseleave" @click="hide">
+      <!--<button class="toast-close-button" @click="hide">×</button>-->
       <div class="toast-container">
         <div class="toast-title">{{title}}</div>
         <div class="toast-content">{{content}}</div>
