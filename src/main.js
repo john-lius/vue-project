@@ -6,6 +6,7 @@ import VueResource from 'vue-resource'
 import router from './router/index.js'
 import http from './js/http.js'
 import toast from './components/toast/plugin'
+import formatDate from 'js/dateFormat'
 import './iconfont/iconfont.css'
 import './styles/base.css'
 import './styles/flex.css'
@@ -14,6 +15,7 @@ Vue.config.productionTip = false;
 Vue.prototype.$login = http.login;
 Vue.prototype.$post = http.post;
 Vue.prototype.$get = http.get;
+Vue.prototype.$format = formatDate;
 Vue.use(VueResource);
 Vue.use(toast);
 

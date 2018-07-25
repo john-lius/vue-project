@@ -7,7 +7,7 @@
         </FormItem>
         <FormItem prop="userPwd">
             <i class="icon iconfont icon-password"></i>
-            <Input type="password" class='no-border underline' v-model="form.userPwd"></Input>
+            <input type="password" class='no-border underline' v-model="form.userPwd" @keyup.enter="validForm('form')"></input>
         </FormItem>
         <Button flex layout layout-align='center center' type="primary" @click="validForm('form')">登&nbsp;&nbsp;录</Button>
     </Form>
