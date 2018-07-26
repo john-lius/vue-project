@@ -48,6 +48,7 @@ https://blog.csdn.net/u011054333/article/details/78256169
 
 > Vue前端开发项目框架搭建(node + webpack + vue)
 https://blog.csdn.net/xiaoping_1988/article/details/78768845
+推荐用Nuxt.js搭建环境，然后把UI组件库选：https://github.com/vueComponent/ant-design
 
 > 基于vue-cli快速构建步骤详解
 https://www.jianshu.com/p/2769efeaa10a
@@ -58,3 +59,11 @@ npm install crypto
 # 基于 Promise 的 HTTP 请求客户端 axios CSDN相关文章:https://blog.csdn.net/binginsist/article/details/65630547
 npm install axios
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+# 格式化日期时间:
+this.$format.formatDate(new Date(), 'yyyy-MM-dd hh:mm')
+<DatePicker type="datetime" format="yyyy-MM-dd HH:mm" v-model="vm.operDate" style="width: 120px"></DatePicker>
+
+# Vue Grid组件：
+https://www.ag-grid.com/javascript-grid-pagination/#pagination-api
